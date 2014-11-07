@@ -49,6 +49,7 @@ cache2.get('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5'); // {name: 'TJ', age: 31}
   drop it and return undefined instead of giving it to you.
 * `redis.host` Redis host
 * `redis.port` Redis port
+* `redis.password` Redis password (if needed)
 
 ## API
 
