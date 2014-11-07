@@ -28,6 +28,12 @@
     "devDependencies": {
         "mocha": "^2.0.1"
     },
+    "keywords": [
+        "distributed",
+        "cache",
+        "lru-cache",
+        "redis"
+    ],
     "engines": {
         "node": "*"
     }
