@@ -9,8 +9,6 @@ the inserted value so that any modifications made to the object
 before or after being cached don't change modify the object in
 cache.
 
-[![Build Status](https://travis-ci.org/zldavis/dirty-cache.svg?branch=master)](https://travis-ci.org/zldavis/dirty-cache)
-
 ```javascript
 var obj = {foo: 'bar'};
 cache.set(1, obj);
@@ -18,6 +16,8 @@ cache.set(1, obj);
 obj == cache.get(1); // false
 obj.foo == cache.get(1).foo; // true
 ```
+
+[![Build Status](https://travis-ci.org/zldavis/dirty-cache.svg?branch=master)](https://travis-ci.org/zldavis/dirty-cache)
 
 ## Usage
 
