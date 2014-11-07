@@ -24,10 +24,16 @@ obj.foo == cache.get(1).foo; // true
 ```javascript
 var dirtyCache = require('dirty-cache');
 
-var cache = dirtyCache({name: 'users', max: 100, maxAge: 60000});
+var cache1 = dirtyCache({name: 'users', max: 100, maxAge: 60000, redis: {host: 'localhost', port: 6379}});
+var cache2 = dirtyCache({name: 'users', max: 100, maxAge: 60000, redis: {host: 'localhost', port: 6379}});
 
-cache.set('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5', {name: 'TJ'});
-cache.get('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5'); // {name: 'TJ'}
+cache1.set('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5', {name: 'TJ'});
+cache1.get('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5'); // {name: 'TJ'}
+
+cache2.set('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5', {name: 'TJ', age: 31}, true);
+
+cache1.get('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5'); // undefined
+cache2.get('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5'); // {name: 'TJ', age: 31}
 ```
 
 ## Options
@@ -41,6 +47,8 @@ cache.get('0087e434-9dfe-4ac9-99e9-fbdbd9f834f5'); // {name: 'TJ'}
 * `maxAge` Maximum age in ms.  Items are not pro-actively pruned out
   as they age, but if you try to get an item that is too old, it'll
   drop it and return undefined instead of giving it to you.
+* `redis.host` Redis host
+* `redis.port` Redis port
 
 ## API
 
