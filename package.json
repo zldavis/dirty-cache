@@ -1,7 +1,7 @@
 {
     "name": "dirty-cache",
     "description": "Simple wrapper around lru-cache that uses pub-sub for notifying of a dirty entry.",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "author": "Zach Davis",
     "main": "index.js",
     "scripts": {

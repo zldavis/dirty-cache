@@ -92,6 +92,18 @@ describe('dirty-cache', function() {
             cache.reset();
             assert.equal(cache.length, 0);
         });
+
+        it('should emit \'reset\' event when reset', function(done) {
+            var reset = false;
+            cache.on('reset', function() {
+                reset = true;
+            });
+            cache.reset();
+            setTimeout(function() {
+                assert.ok(reset, 'reset event not emitted');
+                done();
+            }, 1);
+        });
     });
 
     describe('cluster', function() {
