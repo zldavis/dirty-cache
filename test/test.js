@@ -84,6 +84,14 @@ describe('dirty-cache', function() {
             cache.get('nada');
             assert.deepEqual(cache.stats(), {hits: 2, misses: 1});
         });
+
+        it('should evict all if reset', function() {
+            cache.set('key', 'value');
+            cache.set('another', 'value');
+            assert.equal(cache.length, 2);
+            cache.reset();
+            assert.equal(cache.length, 0);
+        });
     });
 
     describe('cluster', function() {
@@ -168,5 +176,16 @@ describe('dirty-cache', function() {
             }, 10);
         });
 
+        it('should evict all if evicted on other client', function(done) {
+            cache1.set('key', 'value');
+            cache2.set('key', 'value');
+
+            cache1.reset();
+
+            setTimeout(function() {
+                assert.equal(cache2.length, 0);
+                done();
+            }, 10);
+        });
     });
 });
