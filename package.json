@@ -1,40 +1,40 @@
 {
-    "name": "dirty-cache",
-    "description": "Simple wrapper around lru-cache that uses pub-sub for notifying of a dirty entry.",
-    "version": "0.1.6",
-    "author": "Zach Davis",
-    "main": "index.js",
-    "scripts": {
-        "test": "mocha"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/zldavis/dirty-cache.git"
-    },
-    "license": {
-        "type": "MIT",
-        "url": "http://github.com/zldavis/dirty-cache/raw/master/LICENSE"
-    },
-    "bugs": {
-        "url": "https://github.com/zldavis/dirty-cache/issues"
-    },
-    "homepage": "https://github.com/zldavis/dirty-cache",
-    "dependencies": {
-        "lru-cache": "^2.5.0",
-        "lodash": "^2.4.1",
-        "redis": "^0.12.1",
-        "uuid": "^2.0.1"
-    },
-    "devDependencies": {
-        "mocha": "^2.0.1"
-    },
-    "keywords": [
-        "distributed",
-        "cache",
-        "lru-cache",
-        "redis"
-    ],
-    "engines": {
-        "node": "*"
-    }
+  "name": "dirty-cache",
+  "description": "Simple wrapper around lru-cache that uses pub-sub for notifying of a dirty entry.",
+  "version": "0.1.7",
+  "author": "Zach Davis",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zldavis/dirty-cache.git"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "http://github.com/zldavis/dirty-cache/raw/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/zldavis/dirty-cache/issues"
+  },
+  "homepage": "https://github.com/zldavis/dirty-cache",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "lru-cache": "^2.5.0",
+    "redis": "^2.4.2",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "keywords": [
+    "distributed",
+    "cache",
+    "lru-cache",
+    "redis"
+  ],
+  "engines": {
+    "node": "*"
+  }
 }
